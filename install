@@ -1,0 +1,24 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+BACKUP_DIR=~/dotfiles_backup
+
+if [[ -d $BACKUP_DIR && $1 != "-f" ]]; then
+    echo "~/dotfiles_backup/ directory already exist. use -f to force (and delete it)."
+    exit 1
+fi
+
+if [[ -d $BACKUP_DIR ]]; then
+    rm -rf $BACKUP_DIR/*
+else
+    mkdir $BACKUP_DIR
+fi
+
+for file in $(ls $DIR); do
+    if [[ $file != $(basename $0) ]]; then  # not linking this script.
+        if [[ -a ~/.$file ]]; then          # back up file if exists.
+            mv ~/.$file $BACKUP_DIR/
+        fi
+        ln -s $DIR/$file ~/.$file           # create link to repository dotfiles.
+    fi
+done
