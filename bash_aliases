@@ -5,6 +5,7 @@ if [[ -a ~/local_dotfiles/.aliases ]]; then
     source ~/local_dotfiles/.aliases
 fi
 
+alias ls='ls --color=auto'
 alias l='ls -l'
 alias ll='ls -la'
 alias grep='grep --color'
