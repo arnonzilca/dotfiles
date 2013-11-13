@@ -1,8 +1,8 @@
 #!/bin/bash
 # part of the .bashrc
 
-if [[ -a ~/local_dotfiles/.aliases ]]; then
-    source ~/local_dotfiles/.aliases
+if [[ -a ~/local_dotfiles/.bash_aliases ]]; then
+    source ~/local_dotfiles/.bash_aliases
 fi
 
 alias ls='ls --color=auto'
