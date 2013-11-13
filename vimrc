@@ -4,6 +4,8 @@ if filereadable(local_vimrc)
 	source ~/local_dotfiles/.vimrc
 endif
 
+filetype plugin indent on
+
 syntax on
 set smartindent
 set hlsearch
