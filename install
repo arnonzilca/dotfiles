@@ -8,7 +8,8 @@ BACKUP_DIR=~/dotfiles_backup
 run_git_submodule_update()
 {
     cd $DIR
-    if [[ $(git submodule update --init --recursive) ]]; then
+    git submodule update --init --recursive
+    if [[ $? != 0 ]]; then
         echo "Can't install git repository's submodules."
         cd - > /dev/null
         return 1
@@ -17,7 +18,7 @@ run_git_submodule_update()
 }
 
 if [[ -d $BACKUP_DIR && $1 != "-f" ]]; then
-    echo "$BACKUP_DIR directory already exist. use -f to force (and delete it)."
+    echo "Backup direcory ($BACKUP_DIR) already exist. use -f to force (and delete it)."
     exit 1
 fi
 
