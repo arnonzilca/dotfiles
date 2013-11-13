@@ -4,21 +4,34 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BACKUP_DIR=~/dotfiles_backup
 
 if [[ -d $BACKUP_DIR && $1 != "-f" ]]; then
-    echo "~/dotfiles_backup/ directory already exist. use -f to force (and delete it)."
+    echo "$BACKUP_DIR directory already exist. use -f to force (and delete it)."
     exit 1
 fi
 
+git submodule foreach git pull
+
+echo "Creating symbolic links to your dotfiles."
+
 if [[ -d $BACKUP_DIR ]]; then
-    rm -rf $BACKUP_DIR/*
-else
-    mkdir $BACKUP_DIR
+    rm -rf $BACKUP_DIR                      # not removing with * and using else to mkdir cause dotfiles won't be deleted.
 fi
+mkdir $BACKUP_DIR
 
 for file in $(ls $DIR); do
     if [[ $file != $(basename $0) ]]; then  # not linking this script.
-        if [[ -a ~/.$file ]]; then          # back up file if exists.
+        if [[ -L ~/.$file ]]; then          # if file is a link then delete it.
+            rm ~/.$file
+        elif [[ -a ~/.$file ]]; then        # if a real existing file, then back it up.
             mv ~/.$file $BACKUP_DIR/
         fi
         ln -s $DIR/$file ~/.$file           # create link to repository dotfiles.
     fi
 done
+
+if [[ $(ls -A $BACKUP_DIR | wc -l) = 0 ]]; then         # clear backup dir if still empty
+    rmdir $BACKUP_DIR
+else
+    echo "Backup dotfiles were created at: $BACKUP_DIR"
+fi
+
+echo "Run vim to download your plugins."
