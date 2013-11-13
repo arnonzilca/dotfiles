@@ -1,14 +1,27 @@
 #!/bin/bash
 
+set -e
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BACKUP_DIR=~/dotfiles_backup
+
+run_git_submodule_update()
+{
+    cd $DIR
+    if [[ $(git submodule update --init --recursive) ]]; then
+        echo "Can't install git repository's submodules."
+        cd - > /dev/null
+        return 1
+    fi
+    cd - > /dev/null
+}
 
 if [[ -d $BACKUP_DIR && $1 != "-f" ]]; then
     echo "$BACKUP_DIR directory already exist. use -f to force (and delete it)."
     exit 1
 fi
 
-git submodule foreach git pull
+run_git_submodule_update
 
 echo "Creating symbolic links to your dotfiles."
 
