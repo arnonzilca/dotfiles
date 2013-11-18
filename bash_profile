@@ -10,5 +10,3 @@ if [[ -a ~/local_dotfiles/.bash_profile ]]; then
 fi
 
 # User specific environment and startup programs
-
-export PATH=$HOME/bin:$HOME/scripts:$PATH
