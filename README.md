@@ -4,6 +4,7 @@ Arnon's dotfiles
 These are my dotfiles.
 
 I'd recomend cloning to `~/dotfiles`:
+
 	git clone https://github.com/arnonzilca/dotfiles ~/dotfiles
 
 After cloning run `~/dotfiles/install`.
