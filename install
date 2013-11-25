@@ -4,7 +4,7 @@ set -e
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BACKUP_DIR=~/dotfiles_backup
-README_FILE="README.md"
+IGNORE_LIST="$(basename $0) README.md tmux-powerline"
 
 run_git_submodule_update()
 {
@@ -33,13 +33,13 @@ fi
 mkdir $BACKUP_DIR
 
 for file in $(ls $DIR); do
-    if [[ $file != $(basename $0) && $file != $README_FILE ]]; then     # not linking this script & the README file.
-        if [[ -L ~/.$file ]]; then                                      # if file is a link then delete it.
+    if [[ $IGNORE_LIST != *$file* ]]; then   # not linking files in the ignore list (like this script)
+        if [[ -L ~/.$file ]]; then          # if file is a link then delete it.
             rm ~/.$file
-        elif [[ -a ~/.$file ]]; then                                    # if a real existing file, then back it up.
+        elif [[ -a ~/.$file ]]; then        # if a real existing file, then back it up.
             mv ~/.$file $BACKUP_DIR/
         fi
-        ln -s $DIR/$file ~/.$file                                       # create link to repository dotfiles.
+        ln -s $DIR/$file ~/.$file           # create link to repository dotfiles.
     fi
 done
 
