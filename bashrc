@@ -30,6 +30,14 @@ function set_prompt {
     export PS1="${PS1_HEAD}${PS1_RETURN_COLOR}${PS1_FOOT}" 
 }
 
+function tmux {
+    if [[ $# == 0 ]]; then
+        command tmux attach || tmux new
+    else
+        command tmux $*
+    fi
+}
+
 export PATH=$HOME/bin:$HOME/scripts:$PATH
 
 HISTSIZE=1000
