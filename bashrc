@@ -24,9 +24,10 @@ function set_prompt {
     local WHITEBOLD="\[\033[1;37m\]"
     local NONE="\[\033[0m\]"
 
-    local PS1_HEAD="\[${GREEN}\u@\h${NONE}:${BLUE}\w\]"
+    local PS1_HEAD="${GREEN}\u@\h${NONE}:${BLUE}\w"
     local PS1_FOOT="$ ${NONE}"
-    export PS1="$PS1_HEAD"'$([[ $? = 0 ]] && echo "\[\033[0m\]" || echo "\[\033[0;31m\]")'"${PS1_FOOT}" 
+    local PS1_RETURN_COLOR='$([[ $? = 0 ]] && echo "\[\033[0m\]" || echo "\[\033[0;31m\]")'
+    export PS1="${PS1_HEAD}${PS1_RETURN_COLOR}${PS1_FOOT}" 
 }
 
 export PATH=$HOME/bin:$HOME/scripts:$PATH
