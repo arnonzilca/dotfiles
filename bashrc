@@ -24,7 +24,7 @@ function set_prompt {
     local WHITEBOLD="\[\033[1;37m\]"
     local NONE="\[\033[0m\]"
 
-    local PS1_HEAD="${GREEN}\u@\h${NONE}:${BLUE}\w"
+    local PS1_HEAD="${CYAN}${debian_chroot:+($debian_chroot) }${GREEN}\u@\h${NONE}:${BLUE}\w"
     local PS1_FOOT="$ ${NONE}"
     local PS1_RETURN_COLOR='$([[ $? = 0 ]] && echo "\[\033[0m\]" || echo "\[\033[0;31m\]")'
     export PS1="${PS1_HEAD}${PS1_RETURN_COLOR}${PS1_FOOT}" 
@@ -44,6 +44,11 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 
 source ~/.bash_aliases
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
 
 set_prompt
 
