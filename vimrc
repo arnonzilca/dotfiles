@@ -13,6 +13,7 @@ NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'uarun/vim-protobuf'
 NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'vim-scripts/a.vim'
 
 " set 256 colors
 set t_Co=256
