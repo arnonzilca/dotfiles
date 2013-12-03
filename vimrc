@@ -24,10 +24,15 @@ set laststatus=2
 let g:EclimCompletionMethod = 'omnifunc'
 
 " set highlights
-highlight Pmenu ctermbg=247 ctermfg=17
-highlight PmenuSel ctermfg=7 ctermbg=4
-highlight Search cterm=NONE ctermfg=black ctermbg=33
-highlight Normal ctermfg=250 ctermbg=233
+highlight Pmenu         cterm=none  ctermbg=247 ctermfg=17
+highlight PmenuSel      cterm=none  ctermbg=4   ctermfg=7
+highlight Search        cterm=none  ctermbg=33  ctermfg=black
+highlight Normal        cterm=none  ctermbg=232 ctermfg=250
+highlight Visual        cterm=none  ctermbg=111 ctermfg=17
+highlight DiffAdd       cterm=none  ctermbg=17
+highlight diffdelete    cterm=none  ctermbg=235
+highlight DiffChange    cterm=none  ctermbg=53
+highlight DiffText      cterm=none  ctermbg=88
 
 " set PT command to call PT(...) with or without arguments
 command! -nargs=* PT call PT(<f-args>)
