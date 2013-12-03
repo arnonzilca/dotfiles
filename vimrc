@@ -14,13 +14,13 @@ NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'uarun/vim-protobuf'
 NeoBundle 'kien/ctrlp.vim'
 
-"set 256 colors
+" set 256 colors
 set t_Co=256
 
-"enlarge status bar for airline
+" enlarge status bar for airline
 set laststatus=2
 
-"set eclim options
+" set eclim options
 let g:EclimCompletionMethod = 'omnifunc'
 
 " set highlights
@@ -48,6 +48,8 @@ endfunction
 " vim then open eclim's ProjectTree (using PT)
 autocmd VimEnter * if exists(":PingEclim") && filereadable(".eclimrc") && argc() == 0 | :call PT() | endif
 
+" adding command alias 'T' for tab opening
+cnoreabbrev <expr> T ((getcmdtype() is# ':' && getcmdline() is# 'T')?('tabedit'):('T'))
 
 filetype plugin indent on
 
@@ -60,9 +62,13 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
+" set ignore case
 set ic
 
-"set gui font
+" set vim to load .bashrc (mainly for aliases)
+set shellcmdflag=-ic
+
+" set gui font
 if has('gui_running')
     set guifont=Monospace\ 12
 endif
