@@ -35,6 +35,9 @@ highlight diffdelete    cterm=none  ctermbg=235
 highlight DiffChange    cterm=none  ctermbg=53
 highlight DiffText      cterm=none  ctermbg=88
 
+" set F5 to full size window
+map <F5> :50winc + <CR>
+
 " set PT command to call PT(...) with or without arguments
 command! -nargs=* PT call PT(<f-args>)
 
