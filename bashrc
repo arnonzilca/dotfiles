@@ -50,6 +50,11 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
+# correct tmux diaplay between sessions
+for name in $(tmux ls -F '#{session_name}' 2> /dev/null); do
+    tmux setenv -g -t $name DISPLAY $DISPLAY		# set display for all sessions
+done
+
 set_prompt
 
 if [[ -a ~/local_dotfiles/.bashrc ]]; then
