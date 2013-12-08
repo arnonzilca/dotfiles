@@ -38,6 +38,9 @@ highlight DiffText      cterm=none  ctermbg=88
 " set F5 to full size window
 map <F5> :50winc + <CR>
 
+" set F6 to compilation
+map <F6> :make <CR>
+
 " set PT command to call PT(...) with or without arguments
 command! -nargs=* PT call PT(<f-args>)
 
