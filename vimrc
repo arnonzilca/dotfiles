@@ -38,8 +38,18 @@ highlight DiffText      cterm=none  ctermbg=88
 " set F5 to full size window
 map <F5> :50winc + <CR>
 
-" set F6 to compilation
+" set F6 to compilation (makeprg is set in local_dotfiles)
 map <F6> :make <CR>
+
+" F7 is usually used to run tests and is set in local_dotfiles
+
+" F9 is usually used to check out a file and is set in local_dotfiles
+
+" F10 is usually used to revert checking out a file and is set in local_dotfiles
+
+" set F12 and F11 to cn and cp (next/previous markup)
+map <F12> :cn <CR>
+map <F11> :cp <CR>
 
 " set PT command to call PT(...) with or without arguments
 command! -nargs=* PT call PT(<f-args>)
@@ -76,9 +86,6 @@ set softtabstop=4
 
 " set ignore case
 set ic
-
-" set vim to load .bashrc (mainly for aliases)
-set shellcmdflag=-ic
 
 " set gui font
 if has('gui_running')
