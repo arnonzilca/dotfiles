@@ -5,6 +5,22 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+tmup ()
+{
+    echo -n "Updating to latest tmux environment...";
+    export IFS=",";
+    for line in $(tmux showenv -t $(tmux display -p "#S") | tr "\n" ",");
+    do
+        if [[ $line == -* ]]; then
+            unset $(echo $line | cut -c2-);
+        else
+            export $line;
+        fi;
+    done;
+    unset IFS;
+    echo "Done"
+}
+
 function set_prompt {
     local BLACK="\[\033[0;30m\]"
     local BLACKBOLD="\[\033[1;30m\]"
@@ -49,11 +65,6 @@ source ~/.bash_aliases
 if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
-
-# correct tmux diaplay between sessions
-for name in $(tmux ls -F '#{session_name}' 2> /dev/null); do
-    tmux setenv -g -t $name DISPLAY $DISPLAY		# set display for all sessions
-done
 
 set_prompt
 
