@@ -12,6 +12,7 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'uarun/vim-protobuf'
+NeoBundle 'jnwhiteh/vim-golang'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'vim-scripts/a.vim'
 
@@ -20,6 +21,9 @@ set t_Co=256
 
 " enlarge status bar for airline
 set laststatus=2
+
+" set scroll margins
+set scrolloff=7
 
 " set eclim options
 let g:EclimCompletionMethod = 'omnifunc'
@@ -89,7 +93,10 @@ set ic
 
 " set gui font
 if has('gui_running')
-    set guifont=Monospace\ 12
+    colorscheme darkblue
+    set guifont=Monospace\ 13
+    " Maximize gvim window.
+    set lines=999 columns=999
 endif
 
 " set spacing & indent
