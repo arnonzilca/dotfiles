@@ -25,6 +25,9 @@ set laststatus=2
 " set scroll margins
 set scrolloff=7
 
+" Don't go into Ex land
+nnoremap Q <nop>
+
 " set eclim options
 let g:EclimCompletionMethod = 'omnifunc'
 
@@ -80,13 +83,15 @@ cnoreabbrev <expr> T ((getcmdtype() is# ':' && getcmdline() is# 'T')?('tabedit')
 filetype plugin indent on
 
 syntax on
-set smartindent
+set autoindent
 set hlsearch
 set incsearch
 
+set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set smarttab
 
 " set ignore case
 set ic
