@@ -96,7 +96,6 @@ set smarttab
 " set ignore case
 set ic
 
-" set gui font
 if has('gui_running')
     colorscheme darkblue
     set guifont=Monospace\ 13
