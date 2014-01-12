@@ -101,7 +101,7 @@ if has('gui_running')
     colorscheme darkblue
     set guifont=Monospace\ 13
     " Maximize gvim window.
-    set lines=999 columns=999
+    au GUIEnter * simalt ~x
 endif
 
 " set spacing & indent
