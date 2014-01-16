@@ -42,17 +42,34 @@ highlight DiffDelete    cterm=none  ctermbg=235
 highlight DiffChange    cterm=none  ctermbg=53
 highlight DiffText      cterm=none  ctermbg=52
 
+" auto save + warning when multichanging a file.
+set autoread autowrite
+
 " set F5 to full size window
 map <F5> :50winc + <CR>
 
+" redundant - just a reminder that can be overwrited in local_dotfiles
+set makeprg=make
 " set F6 to compilation (makeprg is set in local_dotfiles)
 map <F6> :make <CR>
 
-" F7 is usually used to run tests and is set in local_dotfiles
+" creating RunTests command for overloading in local_dotfiles
+command RunTests execute "echoerr 'RunTests command is not set. please overwrite it in ~/local_dotfiles/.vimrc'"
+" set F7 to run tests
+map <F7> :RunTests <CR>
 
-" F9 is usually used to check out a file and is set in local_dotfiles
+" set F8 to compile & run tests
+map <F8> :make <CR> :RunTests <CR>
 
-" F10 is usually used to revert checking out a file and is set in local_dotfiles
+" creating CheckOutFile command for overloading in local_dotfiles
+command CheckOutFile execute "echoerr 'CheckOutFile command is not set. please overwrite it in ~/local_dotfiles/.vimrc'"
+" set F9 to check out a file
+map <F9> :CheckOutFile <CR>
+
+" creating RevertCheckOut command for overloading in local_dotfiles
+command RevertCheckOut execute "echoerr 'RevertCheckOut command is not set. please overwrite it in ~/local_dotfiles/.vimrc'"
+" set F10 to revert checking out a file
+map <F10> :RevertCheckOut <CR>
 
 " set F12 and F11 to cn and cp (next/previous markup)
 map <F12> :cn <CR>
