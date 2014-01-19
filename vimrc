@@ -42,6 +42,14 @@ highlight DiffDelete    cterm=none  ctermbg=235
 highlight DiffChange    cterm=none  ctermbg=53
 highlight DiffText      cterm=none  ctermbg=52
 
+" highlight unwated white spaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
 " auto save + warning when multichanging a file.
 set autoread autowrite
 
