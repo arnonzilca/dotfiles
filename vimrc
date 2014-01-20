@@ -132,11 +132,17 @@ endif
 au FileType cpp set si sw=4 ts=4 sts=4 et cindent
 au FileType sh set si sw=4 ts=4 sts=4 et
 
-" include ~/local_dotfiles/.vimrc if exists.
-let local_vimrc = $HOME
-let local_vimrc .= '/local_dotfiles/.vimrc'
-if filereadable(local_vimrc)
-    source ~/local_dotfiles/.vimrc
-endif
+" source file if exists
+function SourceFile(file)
+    if filereadable(a:file)
+        execute 'source' a:file
+    endif
+endfunction
+
+" source ~/local_dotfiles/.vimrc if exists.
+call SourceFile($HOME."/local_dotfiles/.vimrc")
+
+" source the local directory's .vimrc if exists.
+call SourceFile('.vimrc')
 
 NeoBundleCheck
