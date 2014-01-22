@@ -18,3 +18,10 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias eclimd='$ECLIPSE_HOME/eclimd'
 alias car='echo "Vroom Vroom!" && read -n 1 c && cat'
 alias sv='vim -c AS'
+
+# change directory
+alias ..="cd .."
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../.."
+alias ..5="cd ../../../../.."
