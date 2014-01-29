@@ -66,8 +66,9 @@ command RunTests execute "echoerr 'RunTests command is not set. please overwrite
 " set F7 to run tests
 map <F7> :RunTests <CR>
 
+command CompileAndRun execute "make" | execute "RunTests"
 " set F8 to compile & run tests
-map <F8> :make <CR> :RunTests <CR>
+map <F8> :CompileAndRun <CR>
 
 " creating CheckOutFile command for overloading in local_dotfiles
 command CheckOutFile execute "echoerr 'CheckOutFile command is not set. please overwrite it in ~/local_dotfiles/.vimrc'"
