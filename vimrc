@@ -106,6 +106,7 @@ autocmd VimEnter * if exists(":PingEclim") && filereadable(".eclimrc") && argc()
 " adding command alias 'T' for tab opening
 cnoreabbrev <expr> T ((getcmdtype() is# ':' && getcmdline() is# 'T')?('tabedit'):('T'))
 
+filetype on
 filetype plugin indent on
 
 syntax on
@@ -140,10 +141,12 @@ function SourceFile(file)
     endif
 endfunction
 
-" source ~/local_dotfiles/.vimrc if exists.
+" source ~/local_dotfiles/.vimrc (if exists).
 call SourceFile($HOME."/local_dotfiles/.vimrc")
 
-" source the local directory's .vimrc if exists.
-call SourceFile('.vimrc')
+if $PWD != $HOME
+    " source the local directory's .vimrc unless local directory is HOME (and if exists).
+    call SourceFile('.vimrc')
+endif
 
 NeoBundleCheck
