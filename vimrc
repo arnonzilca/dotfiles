@@ -40,7 +40,7 @@ highlight Visual        cterm=none  ctermbg=111 ctermfg=17
 highlight DiffAdd       cterm=none  ctermbg=17
 highlight DiffDelete    cterm=none  ctermbg=235
 highlight DiffChange    cterm=none  ctermbg=53
-highlight DiffText      cterm=none  ctermbg=52
+highlight DiffText      cterm=none  ctermbg=124
 
 " highlight unwated white spaces
 highlight ExtraWhitespace ctermbg=red guibg=red
