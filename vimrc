@@ -37,10 +37,11 @@ highlight PmenuSel      cterm=none  ctermbg=4   ctermfg=7
 highlight Search        cterm=none  ctermbg=33  ctermfg=black
 highlight Normal        cterm=none  ctermbg=232 ctermfg=250
 highlight Visual        cterm=none  ctermbg=111 ctermfg=17
-highlight DiffAdd       cterm=none  ctermbg=17
+highlight DiffAdd       cterm=none  ctermbg=18
 highlight DiffDelete    cterm=none  ctermbg=235
 highlight DiffChange    cterm=none  ctermbg=53
-highlight DiffText      cterm=none  ctermbg=124
+highlight DiffText      cterm=none  ctermbg=125
+"highlight DiffText      cterm=none  ctermbg=124
 
 " highlight unwated white spaces
 highlight ExtraWhitespace ctermbg=red guibg=red
