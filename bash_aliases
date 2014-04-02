@@ -1,9 +1,9 @@
 #!/bin/bash
 # part of the .bashrc
 
-if [[ -a ~/local_dotfiles/.bash_aliases ]]; then
-    source ~/local_dotfiles/.bash_aliases
-fi
+vimgrep() {
+    vim -c "grep $*"
+}
 
 alias ls='ls --color=auto'
 alias l='ls -l'
@@ -11,6 +11,8 @@ alias ll='ls -la'
 alias grep='grep --color'
 alias gnr='grep -Inr'
 alias gnir='grep -Inir'
+alias vimgnr='vimgrep -nr'
+alias vimgnir='vimgrep -ir'
 alias v='vim'
 alias sv='vim -c AS'
 alias vd='vimdiff'
@@ -27,3 +29,7 @@ alias ..2="cd ../.."
 alias ..3="cd ../../.."
 alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.."
+
+if [[ -a ~/local_dotfiles/.bash_aliases ]]; then
+    source ~/local_dotfiles/.bash_aliases
+fi
