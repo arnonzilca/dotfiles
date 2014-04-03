@@ -81,6 +81,8 @@ command RevertCheckOut execute "echoerr 'RevertCheckOut command is not set. plea
 " set F10 to revert checking out a file
 map <F10> :RevertCheckOut <CR>
 
+command W w
+
 " set F12 and F11 to cn and cp (next/previous markup)
 map <F12> :cn <CR>
 map <F11> :cp <CR>
