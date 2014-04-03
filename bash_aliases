@@ -2,7 +2,11 @@
 # part of the .bashrc
 
 vimgrep() {
-    vim -c "grep $*"
+    cmd=""
+    for arg in "$@"; do
+        cmd="${cmd} \"${arg}\""
+    done
+    vim -c "grep ${cmd}"
 }
 
 alias ls='ls --color=auto'
