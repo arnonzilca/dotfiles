@@ -15,6 +15,7 @@ NeoBundle 'uarun/vim-protobuf'
 NeoBundle 'jnwhiteh/vim-golang'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'vim-scripts/a.vim'
+NeoBundle 'bogado/file-line'
 
 " set 256 colors
 set t_Co=256
