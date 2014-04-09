@@ -32,17 +32,26 @@ nnoremap Q <nop>
 " set eclim options
 let g:EclimCompletionMethod = 'omnifunc'
 
-" set highlights
+" set normal view highlight colors
 highlight Pmenu         cterm=none  ctermbg=247 ctermfg=17
 highlight PmenuSel      cterm=none  ctermbg=4   ctermfg=7
 highlight Search        cterm=none  ctermbg=33  ctermfg=black
 highlight Normal        cterm=none  ctermbg=232 ctermfg=250
 highlight Visual        cterm=none  ctermbg=111 ctermfg=17
-highlight DiffAdd       cterm=none  ctermbg=18
-highlight DiffDelete    cterm=none  ctermbg=235
-highlight DiffChange    cterm=none  ctermbg=53
-highlight DiffText      cterm=none  ctermbg=125
-"highlight DiffText      cterm=none  ctermbg=124
+
+" set diff view highlight colors
+"highlight DiffAdd       cterm=none  ctermbg=18
+"highlight DiffDelete    cterm=none  ctermbg=235
+"highlight DiffChange    cterm=none  ctermbg=53
+"highlight DiffText      cterm=none  ctermbg=238
+highlight DiffAdd       cterm=none  ctermbg=22
+highlight DiffDelete    cterm=none  ctermbg=52
+highlight DiffChange    cterm=none  ctermbg=235
+highlight DiffText      cterm=none  ctermbg=58
+
+" set spell check highlight color
+highlight clear SpellBad
+highlight SpellBad cterm=underline ctermfg=9
 
 " highlight unwated white spaces
 highlight ExtraWhitespace ctermbg=red guibg=red
