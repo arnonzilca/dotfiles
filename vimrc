@@ -163,4 +163,6 @@ if $PWD != $HOME
     call SourceFile('.vimrc')
 endif
 
+set path+=include
+
 NeoBundleCheck
