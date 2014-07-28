@@ -16,6 +16,7 @@ NeoBundle 'jnwhiteh/vim-golang'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'vim-scripts/a.vim'
 NeoBundle 'bogado/file-line'
+NeoBundle 'solarnz/thrift.vim'
 
 " set 256 colors
 set t_Co=256
