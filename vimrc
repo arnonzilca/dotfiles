@@ -144,6 +144,9 @@ if has('gui_running')
     au GUIEnter * simalt ~x
 endif
 
+" Markdown
+au BufNewFile,BufRead *.md set filetype=markdown
+
 " set spacing & indent
 au FileType cpp set si sw=4 ts=4 sts=4 et cindent
 au FileType sh set si sw=4 ts=4 sts=4 et
