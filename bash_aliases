@@ -26,6 +26,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias tmux-alert='tmux display-message "Done!"'
 alias eclimd='$ECLIPSE_HOME/eclimd'
 alias car='echo "Vroom Vroom!" && read -n 1 c && cat'
+alias gg='git graph'
+alias ggg='git full-graph'
 
 # change directory
 alias ..="cd .."
