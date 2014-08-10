@@ -73,12 +73,12 @@ set makeprg=make
 " set F6 to compilation (makeprg is set in local_dotfiles)
 map <F6> :make <CR>
 
-" creating RunTests command for overloading in local_dotfiles
-command RunTests execute "echoerr 'RunTests command is not set. please overwrite it in ~/local_dotfiles/.vimrc'"
+" creating Run command for overloading in local_dotfiles
+command Run execute "echoerr 'Run command is not set. please overwrite it in ~/local_dotfiles/.vimrc'"
 " set F7 to run tests
-map <F7> :RunTests <CR>
+map <F7> :Run <CR>
 
-command CompileAndRun execute "make" | execute "RunTests"
+command CompileAndRun execute "make" | execute "Run"
 " set F8 to compile & run tests
 map <F8> :CompileAndRun <CR>
 
@@ -92,11 +92,12 @@ command RevertCheckOut execute "echoerr 'RevertCheckOut command is not set. plea
 " set F10 to revert checking out a file
 map <F10> :RevertCheckOut <CR>
 
-command W w
-
 " set F12 and F11 to cn and cp (next/previous markup)
 map <F12> :cn <CR>
 map <F11> :cp <CR>
+
+" set W to write like w
+command W w
 
 " set PT command to call PT(...) with or without arguments
 command! -nargs=* PT call PT(<f-args>)
