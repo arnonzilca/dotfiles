@@ -10,8 +10,8 @@ vimgrep() {
 }
 
 alias ls='ls --color=auto'
-alias l='ls -l'
-alias ll='ls -la'
+alias l='ls -lq'
+alias ll='ls -laq'
 alias grep='grep --color'
 alias gnr='grep -Inr'
 alias gnir='grep -Inir'
