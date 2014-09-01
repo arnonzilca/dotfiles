@@ -48,9 +48,9 @@ function set_prompt {
 
 function tmux {
     if [[ $# == 0 ]]; then
-        command tmux attach || tmux new
+        TERM="xterm-256color" command tmux attach || tmux new
     else
-        command tmux $*
+        TERM="xterm-256color" command tmux $*
     fi
 }
 
