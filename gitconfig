@@ -6,7 +6,9 @@
     ui = auto
 
 [alias]
-    full-graph = log --graph --oneline --date=short --all --decorate --format=format:'%C(yellow)%h %C(cyan)%ad %C(magenta)%an%C(reset) - %C(white)%s%C(reset)%C(bold red)%d%C(reset)'
-    graph = log -n 20 --graph --oneline --date=short --all --decorate --format=format:'%C(yellow)%h %C(cyan)%ad %C(magenta)%an%C(reset) - %C(white)%s%C(reset)%C(bold red)%d%C(reset)'
+    full-graph = log --graph --oneline --date=short --all --decorate --format=format:'%C(yellow)%h %C(cyan)%ad %C(magenta)%an%C(reset) - %C(white)%s%C(bold red)%d%C(reset)'
+    graph = log -n 20 --graph --oneline --date=short --all --decorate --format=format:'%C(yellow)%h %C(cyan)%ad %C(magenta)%an%C(reset) - %C(white)%s%C(bold red)%d%C(reset)'
+    fetch-rebase = !git fetch && git rebase origin master
+
 [core]
 	editor = vim
