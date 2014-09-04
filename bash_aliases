@@ -26,7 +26,10 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias tmux-alert='tmux display-message "Done!"'
 alias eclimd='$ECLIPSE_HOME/eclimd'
 alias car='echo "Vroom Vroom!" && read -n 1 c && cat'
+alias bashrc-tmux-source='tmux-run-everywhere "source ~/.bashrc"'
 alias gd='git diff'
+alias gdc='git diff --cached'
+alias gis='git status'
 alias gg='git graph'
 alias ggg='git full-graph'
 
