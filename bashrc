@@ -6,11 +6,10 @@ if [ -f /etc/bashrc ]; then
 fi
 
 function set_prompt {
-    local GREEN="\[\033[0;32m\]"
-    local BLUE="\[\033[0;34m\]"
-    local PURPLEBOLD="\[\033[1;35m\]"
-    local PURPLE="\[\033[0;35m\]"
-    local CYAN="\[\033[0;36m\]"
+    local GREEN_B="\[\033[1;32m\]"
+    local BLUE_B="\[\033[1;34m\]"
+    local PURPLE_B="\[\033[1;35m\]"
+    local CYAN_B="\[\033[1;36m\]"
     local NONE="\[\033[0m\]"
 
     if [[ -r /etc/debian_chroot ]]; then
@@ -22,8 +21,8 @@ function set_prompt {
         git_cmd='$(__git_ps1)'
     fi
 
-    local PS1_HEAD="${CYAN}${debian_chroot:+($debian_chroot) }${GREEN}\u@\h${NONE}:${BLUE}\w"
-    local PS1_FOOT="\$${PURPLEBOLD}${git_cmd} ${NONE}"
+    local PS1_HEAD="${CYAN_B}${debian_chroot:+($debian_chroot) }${GREEN_B}\u@\h${NONE}:${BLUE_B}\w"
+    local PS1_FOOT="\$${PURPLE_B}${git_cmd} ${NONE}"
     local PS1_RETURN_COLOR='$([[ $? = 0 ]] && echo "\[\033[0m\]" || echo "\[\033[0;31m\]")'
     export PS1="${PS1_HEAD}${PS1_RETURN_COLOR}${PS1_FOOT}"
 }
