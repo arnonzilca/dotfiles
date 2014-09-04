@@ -49,4 +49,4 @@ else
     echo "Backup dotfiles were created at: $BACKUP_DIR"
 fi
 
-echo "Run vim to download your plugins."
+echo "Run vim to download plugins."
