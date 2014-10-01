@@ -17,6 +17,7 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'vim-scripts/a.vim'
 NeoBundle 'bogado/file-line'
 NeoBundle 'solarnz/thrift.vim'
+NeoBundle 'tpope/vim-pathogen'
 
 " mouse support
 set mouse=a
