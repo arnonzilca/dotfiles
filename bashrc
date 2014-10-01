@@ -34,9 +34,9 @@ export PATH=$HOME/bin:$HOME/scripts:$PATH
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-source ~/.bash_aliases
-source ~/.bash_functions
+source $HOME/.bash_aliases
+source $HOME/.bash_functions
 
-if [[ -r ~/local_dotfiles/.bashrc ]]; then
-    source ~/local_dotfiles/.bashrc
+if [[ -r $HOME/local_dotfiles/.bashrc ]]; then
+    source $HOME/local_dotfiles/.bashrc
 fi

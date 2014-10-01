@@ -3,7 +3,7 @@
 set -e
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-BACKUP_DIR=~/dotfiles_backup
+BACKUP_DIR=$HOME/dotfiles_backup
 IGNORE_LIST="$(basename $0) README.md"
 
 run_git_submodule_update()
@@ -34,12 +34,12 @@ mkdir $BACKUP_DIR
 
 for file in $(ls $DIR); do
     if [[ $IGNORE_LIST != *$file* ]]; then  # not linking files in the ignore list (like this script)
-        if [[ -L ~/.$file ]]; then          # if file is a link then delete it.
-            rm ~/.$file
-        elif [[ -a ~/.$file ]]; then        # if a real existing file, then back it up.
-            mv ~/.$file $BACKUP_DIR/
+        if [[ -L $HOME/.$file ]]; then          # if file is a link then delete it.
+            rm $HOME/.$file
+        elif [[ -a $HOME/.$file ]]; then        # if a real existing file, then back it up.
+            mv $HOME/.$file $BACKUP_DIR/
         fi
-        ln -s $DIR/$file ~/.$file           # create link to repository dotfiles.
+        ln -s $DIR/$file $HOME/.$file           # create link to repository dotfiles.
     fi
 done
 

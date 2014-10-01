@@ -40,6 +40,6 @@ alias ..3="cd ../../.."
 alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.."
 
-if [[ -a ~/local_dotfiles/.bash_aliases ]]; then
-    source ~/local_dotfiles/.bash_aliases
+if [[ -a $HOME/local_dotfiles/.bash_aliases ]]; then
+    source $HOME/local_dotfiles/.bash_aliases
 fi
