@@ -1,9 +1,9 @@
 if has('vim_starting')
     set nocompatible               " Be iMproved
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
+    :exe ":set runtimepath+=$HOME/.vim/bundle/neobundle.vim/"
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#rc(expand("$HOME/.vim/bundle/"))
 
 " Let NeoBundle manage plugins (including itself)
 NeoBundleFetch 'Shougo/neobundle.vim'
