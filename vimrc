@@ -18,6 +18,9 @@ NeoBundle 'vim-scripts/a.vim'
 NeoBundle 'bogado/file-line'
 NeoBundle 'solarnz/thrift.vim'
 
+" mouse support
+set mouse=a
+
 " set 256 colors
 set t_Co=256
 
