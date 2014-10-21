@@ -78,21 +78,21 @@ set makeprg=make
 map <F6> :make <CR>
 
 " creating Run command for overloading in local_dotfiles
-command Run execute "echoerr 'Run command is not set. please overwrite it in ~/local_dotfiles/.vimrc'"
+command! Run execute "echoerr 'Run command is not set. please overwrite it in ~/local_dotfiles/.vimrc'"
 " set F7 to run tests
 map <F7> :Run <CR>
 
-command CompileAndRun execute "make" | execute "Run"
+command! CompileAndRun execute "make" | execute "Run"
 " set F8 to compile & run tests
 map <F8> :CompileAndRun <CR>
 
 " creating CheckOutFile command for overloading in local_dotfiles
-command CheckOutFile execute "echoerr 'CheckOutFile command is not set. please overwrite it in ~/local_dotfiles/.vimrc'"
+command! CheckOutFile execute "echoerr 'CheckOutFile command is not set. please overwrite it in ~/local_dotfiles/.vimrc'"
 " set F9 to check out a file
 map <F9> :CheckOutFile <CR>
 
 " creating RevertCheckOut command for overloading in local_dotfiles
-command RevertCheckOut execute "echoerr 'RevertCheckOut command is not set. please overwrite it in ~/local_dotfiles/.vimrc'"
+command! RevertCheckOut execute "echoerr 'RevertCheckOut command is not set. please overwrite it in ~/local_dotfiles/.vimrc'"
 " set F10 to revert checking out a file
 map <F10> :RevertCheckOut <CR>
 
@@ -101,7 +101,7 @@ map <F12> :cn <CR>
 map <F11> :cp <CR>
 
 " set W to write like w
-command W w
+command! W w
 
 " set PT command to call PT(...) with or without arguments
 command! -nargs=* PT call PT(<f-args>)
@@ -109,7 +109,7 @@ command! -nargs=* PT call PT(<f-args>)
 " function PT will open eclim's ProjectTree
 " when run with no arguments the function will call 'ProjectTree .'
 " when run with arg1 the function will call 'ProjectTree arg1'
-function PT(...)
+function! PT(...)
     if a:0 > 0
         let s:project_folder = a:1
     exec 'ProjectTree '.s:project_folder
@@ -157,7 +157,7 @@ au FileType cpp set si sw=4 ts=4 sts=4 et cindent
 au FileType sh set si sw=4 ts=4 sts=4 et
 
 " source file if exists
-function SourceFile(file)
+function! SourceFile(file)
     if filereadable(a:file)
         execute 'source' a:file
     endif
