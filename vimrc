@@ -78,7 +78,7 @@ set makeprg=make
 map <F6> :make <CR>
 
 " creating Run command for overloading in local_dotfiles
-command! Run execute "echoerr 'Run command is not set. please overwrite it in ~/local_dotfiles/.vimrc'"
+command! Run execute "echoerr 'Run command is not set. please overwrite it in ~/local_dotfiles/.vimrc or in your current directory.'"
 " set F7 to run tests
 map <F7> :Run <CR>
 
@@ -87,12 +87,12 @@ command! CompileAndRun execute "make" | execute "Run"
 map <F8> :CompileAndRun <CR>
 
 " creating CheckOutFile command for overloading in local_dotfiles
-command! CheckOutFile execute "echoerr 'CheckOutFile command is not set. please overwrite it in ~/local_dotfiles/.vimrc'"
+command! CheckOutFile execute "echoerr 'CheckOutFile command is not set. please overwrite it in ~/local_dotfiles/.vimrc or in your current directory.'"
 " set F9 to check out a file
 map <F9> :CheckOutFile <CR>
 
 " creating RevertCheckOut command for overloading in local_dotfiles
-command! RevertCheckOut execute "echoerr 'RevertCheckOut command is not set. please overwrite it in ~/local_dotfiles/.vimrc'"
+command! RevertCheckOut execute "echoerr 'RevertCheckOut command is not set. please overwrite it in ~/local_dotfiles/.vimrc or in your current directory.'"
 " set F10 to revert checking out a file
 map <F10> :RevertCheckOut <CR>
 
