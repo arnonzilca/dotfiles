@@ -71,6 +71,9 @@ set textwidth=100
 set colorcolumn=100
 highlight ColorColumn ctermbg=black
 
+" fix backspace behaviour
+set backspace=2
+
 " auto save + warning when multichanging a file.
 set autoread autowrite
 
