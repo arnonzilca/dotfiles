@@ -66,6 +66,11 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
+" define & highlight max text width
+set textwidth=100
+set colorcolumn=100
+highlight ColorColumn ctermbg=black
+
 " auto save + warning when multichanging a file.
 set autoread autowrite
 
@@ -77,7 +82,7 @@ set makeprg=make
 " set F6 to compilation (makeprg is set in local_dotfiles)
 map <F6> :make <CR>
 
-" creating Run command for overloading in local_dotfiles
+" creating Run command for overloading
 command! Run execute "echoerr 'Run command is not set. please overwrite it in ~/local_dotfiles/.vimrc or in your current directory.'"
 " set F7 to run tests
 map <F7> :Run <CR>
@@ -86,12 +91,12 @@ command! CompileAndRun execute "make" | execute "Run"
 " set F8 to compile & run tests
 map <F8> :CompileAndRun <CR>
 
-" creating CheckOutFile command for overloading in local_dotfiles
+" creating CheckOutFile command for overloading
 command! CheckOutFile execute "echoerr 'CheckOutFile command is not set. please overwrite it in ~/local_dotfiles/.vimrc or in your current directory.'"
 " set F9 to check out a file
 map <F9> :CheckOutFile <CR>
 
-" creating RevertCheckOut command for overloading in local_dotfiles
+" creating RevertCheckOut command for overloading
 command! RevertCheckOut execute "echoerr 'RevertCheckOut command is not set. please overwrite it in ~/local_dotfiles/.vimrc or in your current directory.'"
 " set F10 to revert checking out a file
 map <F10> :RevertCheckOut <CR>
