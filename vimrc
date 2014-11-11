@@ -68,8 +68,10 @@ autocmd BufWinLeave * call clearmatches()
 
 " define & highlight max text width
 set textwidth=100
-set colorcolumn=100
-highlight ColorColumn ctermbg=black
+if version >= 704
+    set colorcolumn=100
+    highlight ColorColumn ctermbg=black
+endif
 
 " fix backspace behaviour
 set backspace=2
