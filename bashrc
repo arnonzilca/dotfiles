@@ -34,6 +34,8 @@ export PATH=$HOME/bin:$HOME/scripts:$PATH
 HISTSIZE=1000
 HISTFILESIZE=2000
 
+stty -ixon # disable C-s C-q scroll lock
+
 source $HOME/.bash_aliases
 source $HOME/.bash_functions
 
