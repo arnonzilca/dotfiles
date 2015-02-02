@@ -22,7 +22,7 @@ alias sv='vim -c AS'
 alias vd='vimdiff'
 alias remount='sudo umount -a -t cifs -l && sudo mount -a'
 alias remake='make clean all'
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history | tail -n1 | sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alerts//'\'')"'
+alias alert="zenity --info --text='Done!'"
 alias tmux-alert='tmux display-message "Done!"'
 alias eclimd='$ECLIPSE_HOME/eclimd'
 alias car='echo "Vroom Vroom!" && read -n 1 c && cat'
