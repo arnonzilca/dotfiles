@@ -31,6 +31,8 @@ set_prompt
 
 export PATH=$HOME/bin:$HOME/scripts:$PATH
 
+export EDITOR=vim
+
 HISTSIZE=1000
 HISTFILESIZE=2000
 
