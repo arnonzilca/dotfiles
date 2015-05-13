@@ -80,6 +80,9 @@ set backspace=2
 " auto save + warning when multichanging a file.
 set autoread autowrite
 
+" hitting // when a text is selcted will search the slected text
+vnoremap // y/<C-R>"<CR>
+
 " set F5 to full size window
 map <F5> :50winc + <CR>
 
