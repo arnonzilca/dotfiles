@@ -26,3 +26,8 @@ function tmup() {
 function tmux-run-everywhere() {
     tmux list-windows -t 0 | cut -d: -f1 | xargs -I{} tmux send-keys -t 0:{} "$1" Enter
 }
+
+function _known_ssh_hosts() {
+    COMPREPLY=( $(grep "^Host" "$HOME/.ssh/config" | sed "s/^Host //" | tr '\n' ' ') )
+}
+complete -F _known_ssh_hosts ssh
