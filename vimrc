@@ -83,6 +83,9 @@ set autoread autowrite
 " hitting // when a text is selcted will search the slected text
 vnoremap // y/<C-R>"<CR>
 
+" since C-A is used for tmux, use C-I to increment numbers
+noremap <C-I> <C-A>
+
 " set F5 to full size window
 map <F5> :50winc + <CR>
 
