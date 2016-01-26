@@ -34,6 +34,7 @@ alias gis='git status'
 alias gg='git graph'
 alias ggg='git full-graph'
 alias myip="curl -v --silent 'http://www.whatsmyip.us/imgcode.php' 2>&1 | sed -rn 's/^([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}).*/\1/p'"
+alias has-null="python -c 'import sys; sys.exit(not b\"\x00\" in open(sys.argv[1], \"rb\").read())'"
 
 # change directory
 alias ..="cd .."
