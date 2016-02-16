@@ -120,6 +120,9 @@ map <F11> :cp <CR>
 " set W to write like w
 command! W w
 
+" set Nowrap to stop physical line wrapping
+command! Nowrap set textwidth=0 wrapmargin=0
+
 " set PT command to call PT(...) with or without arguments
 command! -nargs=* PT call PT(<f-args>)
 
