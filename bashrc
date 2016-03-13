@@ -21,6 +21,11 @@ function set_prompt {
         git_cmd='$(__git_ps1)'
     fi
 
+    if [[ -r /etc/bash_completion.d/git-prompt ]]; then
+        source /etc/bash_completion.d/git-prompt
+        git_cmd='$(__git_ps1)'
+    fi
+
     local PS1_HEAD="${CYAN_B}${debian_chroot:+($debian_chroot) }${GREEN_B}\u@\h${NONE}:${BLUE_B}\w"
     local PS1_FOOT="\$${PURPLE_B}${git_cmd} ${NONE}"
     local PS1_RETURN_COLOR='$([[ $? = 0 ]] && echo "\[\033[0m\]" || echo "\[\033[0;31m\]")'
