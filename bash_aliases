@@ -37,6 +37,7 @@ alias myip="curl http://bot.whatismyipaddress.com/ && echo"
 alias has-null="python -c 'import sys; sys.exit(not b\"\x00\" in open(sys.argv[1], \"rb\").read())'"
 alias histogram="sort | uniq -c | sort -nr"
 alias histogram-sum="awk '{s+=\$1} END {print s}'"
+alias subtract_sorted="comm -23"
 
 # change directory
 alias ..="cd .."
