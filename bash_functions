@@ -33,7 +33,11 @@ function _known_ssh_hosts() {
 
 function printline()
 {
-    sed -n -e "$1p" "$2"
+    start="$1"
+    end="$2"
+    file="$3"
+    quit=$((end + 1))
+    sed -n "${start},${end}p;${quit}q" "$file"
 }
 
 complete -F _known_ssh_hosts ssh
