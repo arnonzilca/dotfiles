@@ -30,4 +30,10 @@ function tmux-run-everywhere() {
 function _known_ssh_hosts() {
     COMPREPLY=( $(grep "^Host" "$HOME/.ssh/config" | sed "s/^Host //" | tr '\n' ' ') )
 }
+
+function printline()
+{
+    sed -n -e "$1p" "$2"
+}
+
 complete -F _known_ssh_hosts ssh
