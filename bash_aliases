@@ -31,6 +31,7 @@ alias bashrc-tmux-source='tmux-run-everywhere "source ~/.bashrc"'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gis='git status'
+alias gfr='git fetch-rebase'
 alias gg='git graph'
 alias ggg='git full-graph'
 alias myip="curl http://bot.whatismyipaddress.com/ && echo"
