@@ -39,6 +39,7 @@ alias has-null="python -c 'import sys; sys.exit(not b\"\x00\" in open(sys.argv[1
 alias histogram="sort | uniq -c | sort -nr"
 alias histogram-sum="awk '{s+=\$1} END {print s}'"
 alias subtract_sorted="comm -23"
+alias errcho='>&2 echo'
 
 # change directory
 alias ..="cd .."
