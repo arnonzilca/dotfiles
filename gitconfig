@@ -11,4 +11,7 @@
     fetch-rebase = !git fetch && git rebase origin/master
 
 [core]
-	editor = vim
+    editor = vim
+
+[push]
+    default = simple
