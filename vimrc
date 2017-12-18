@@ -20,6 +20,7 @@ NeoBundle 'solarnz/thrift.vim'
 NeoBundle 'tpope/vim-pathogen'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'vim-scripts/Mark'
 
 " mouse support
 set mouse=a
