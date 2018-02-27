@@ -21,6 +21,7 @@ NeoBundle 'tpope/vim-pathogen'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'vim-scripts/Mark'
+NeoBundle 'vim-scripts/Align'
 
 " mouse support
 set mouse=a
