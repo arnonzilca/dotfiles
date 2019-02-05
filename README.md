@@ -10,6 +10,3 @@ I'd recomend cloning to `~/dotfiles`:
 After cloning run `~/dotfiles/install`.
 > Please note that while this repository uses submodules it is not mandatory to clone it with '--recursive'.
 > The installation script will take care of that for you. :)
-
-Also, it is recomended that you run vim right afterwards for plugin installations.
-

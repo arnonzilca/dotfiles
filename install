@@ -51,4 +51,5 @@ fi
 
 curl -o ~/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
 
-echo "Run vim to download plugins."
+echo "Runing vim to download plugins."
+yes | vim -c "q"
