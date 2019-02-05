@@ -22,6 +22,7 @@ NeoBundle 'elzr/vim-json'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'vim-scripts/Mark'
 NeoBundle 'vim-scripts/Align'
+NeoBundle 'ekalinin/Dockerfile.vim'
 
 " mouse support
 set mouse=a
