@@ -42,6 +42,7 @@ alias average="awk '{ s += \$1; c++ } END { print s/c }'"
 alias median="sort | awk ' { a[i++]=$1; } END { print a[int(i/2)]; }'"
 alias subtract_sorted="comm -23"
 alias errcho='>&2 echo'
+alias space='du -sh * | sort -h'
 
 # change directory
 alias ..="cd .."
