@@ -18,7 +18,7 @@ NeoBundle 'vim-scripts/a.vim'
 NeoBundle 'bogado/file-line'
 NeoBundle 'solarnz/thrift.vim'
 NeoBundle 'tpope/vim-pathogen'
-NeoBundle 'elzr/vim-json'
+"NeoBundle 'elzr/vim-json'
 "NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'vim-scripts/Mark'
 NeoBundle 'vim-scripts/Align'
@@ -151,6 +151,8 @@ cnoreabbrev <expr> T ((getcmdtype() is# ':' && getcmdline() is# 'T')?('tabedit')
 
 filetype on
 filetype plugin indent on
+autocmd Filetype json setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype yaml setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 syntax on
 set autoindent
@@ -162,6 +164,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set smarttab
+set backupcopy=yes
 
 " set ignore case
 set ic
