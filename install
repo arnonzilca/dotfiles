@@ -4,6 +4,7 @@ set -e
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BACKUP_DIR=$HOME/dotfiles_backup
+LOCAL_DOTFILES_DIR=$HOME/local_dotfiles
 IGNORE_LIST="$(basename $0) README.md"
 
 run_git_submodule_update()
@@ -22,6 +23,8 @@ if [[ -d $BACKUP_DIR && $1 != "-f" ]]; then
     echo "Backup direcory ($BACKUP_DIR) already exist. use -f to force (and delete it)."
     exit 1
 fi
+
+mkdir -p $LOCAL_DOTFILES_DIR
 
 run_git_submodule_update
 
