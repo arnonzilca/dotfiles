@@ -45,7 +45,7 @@ export EDITOR=vim
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-stty -ixon # disable C-s C-q scroll lock
+#stty -ixon # disable C-s C-q scroll lock
 
 source $HOME/.bash_aliases
 source $HOME/.bash_functions
