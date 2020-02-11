@@ -43,6 +43,7 @@ alias median="sort | awk ' { a[i++]=$1; } END { print a[int(i/2)]; }'"
 alias subtract_sorted="comm -23"
 alias errcho='>&2 echo'
 alias space='du -sh * | sort -h'
+alias docker='sudo docker'
 
 # change directory
 alias ..="cd .."
