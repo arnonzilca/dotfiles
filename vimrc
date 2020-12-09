@@ -12,7 +12,6 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'uarun/vim-protobuf'
-NeoBundle 'fatih/vim-go'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'vim-scripts/a.vim'
 NeoBundle 'bogado/file-line'
@@ -23,6 +22,8 @@ NeoBundle 'tpope/vim-pathogen'
 NeoBundle 'vim-scripts/Mark'
 NeoBundle 'vim-scripts/Align'
 NeoBundle 'ekalinin/Dockerfile.vim'
+NeoBundle 'vim-scripts/tar.vim'
+NeoBundle 'leafgarland/typescript-vim'
 
 " mouse support
 set mouse=a
@@ -158,6 +159,7 @@ syntax on
 set autoindent
 set hlsearch
 set incsearch
+set nofixendofline " stop fixing end of file newline!
 
 set expandtab
 set tabstop=4
@@ -165,6 +167,10 @@ set shiftwidth=4
 set softtabstop=4
 set smarttab
 set backupcopy=yes
+
+autocmd Filetype json setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype yaml setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype js setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 " set ignore case
 set ic
