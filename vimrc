@@ -152,8 +152,6 @@ cnoreabbrev <expr> T ((getcmdtype() is# ':' && getcmdline() is# 'T')?('tabedit')
 
 filetype on
 filetype plugin indent on
-autocmd Filetype json setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-autocmd Filetype yaml setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 syntax on
 set autoindent
