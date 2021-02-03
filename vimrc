@@ -91,6 +91,9 @@ vnoremap // y/<C-R>"<CR>
 " since C-A is used for tmux, use C-I to increment numbers
 noremap <C-I> <C-A>
 
+command! RemoveTrailingSpaces execute ':%s/\s\+$//e'
+command! ReplaceTabsWithSpaces execute ':%s/\t/    /eg'
+
 " set F5 to full size window
 map <F5> :50winc + <CR>
 
