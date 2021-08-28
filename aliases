@@ -9,7 +9,11 @@ vimgrep() {
     vim -c "grep ${cmd}"
 }
 
-alias ls='ls --color=auto'
+if [[ -n "$ZSH_VERSION" ]]; then
+    alias ls='ls -G'
+else
+    alias ls='ls --color=auto'
+fi
 alias l='ls -lqh'
 alias ll='ls -laqh'
 alias grep='grep --color'
@@ -54,6 +58,6 @@ alias ..3="cd ../../.."
 alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.."
 
-if [[ -a $HOME/local_dotfiles/.bash_aliases ]]; then
-    source $HOME/local_dotfiles/.bash_aliases
+if [[ -a $HOME/local_dotfiles/.aliases ]]; then
+    source $HOME/local_dotfiles/.aliases
 fi

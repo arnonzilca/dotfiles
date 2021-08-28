@@ -5,7 +5,7 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-function set_prompt {
+function set_prompt() {
     local GREEN_B="\[\033[1;32m\]"
     local RED_B="\[\033[1;31m\]"
     local BLUE_B="\[\033[1;34m\]"
@@ -47,7 +47,7 @@ HISTFILESIZE=2000
 
 #stty -ixon # disable C-s C-q scroll lock
 
-source $HOME/.bash_aliases
+source $HOME/.aliases
 source $HOME/.bash_functions
 
 if [[ -r $HOME/local_dotfiles/.bashrc ]]; then
