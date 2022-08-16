@@ -50,6 +50,7 @@ alias subtract_sorted="comm -23"
 alias errcho='>&2 echo'
 alias space='du -sh * | sort -h'
 alias docker='sudo docker'
+alias cpy='pbcopy'
 
 # change directory
 alias ..="cd .."
