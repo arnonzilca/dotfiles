@@ -146,10 +146,6 @@ function! PT(...)
     endif
 endfunction
 
-" if eclim is installed & current folder has an .eclimrc & no files were to
-" vim then open eclim's ProjectTree (using PT)
-autocmd VimEnter * if exists(":PingEclim") && filereadable(".eclimrc") && argc() == 0 | :call PT() | endif
-
 " adding command alias 'T' for tab opening
 cnoreabbrev <expr> T ((getcmdtype() is# ':' && getcmdline() is# 'T')?('tabedit'):('T'))
 
@@ -163,15 +159,11 @@ set incsearch
 set nofixendofline " stop fixing end of file newline!
 
 set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set smarttab
 set backupcopy=yes
-
-autocmd Filetype json setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-autocmd Filetype yaml setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-autocmd Filetype js setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 " set ignore case
 set ic
@@ -180,7 +172,7 @@ if has('gui_running')
     colorscheme darkblue
     set guifont=Monospace\ 13
     " Maximize gvim window.
-    au GUIEnter * simalt ~x
+    "au GUIEnter * simalt ~x
 endif
 
 " Markdown
